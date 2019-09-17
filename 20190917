@@ -1,0 +1,14 @@
+Problem : Excuting submit when I press Enter key at form input tag even though I didn't bind event
+
+Cause :  Hitting ENTER in a text input field in an HTML form has rather different effects on different browsers
+
+Solution  : 
+  $('form input').keydown(function (e) {
+      if (e.keyCode == 13) {
+          e.preventDefault();
+          return false;
+      }
+  });
+
+
+but I'm still curious Why Hitting ENTER doesn't excute submission at other jsp in same project
