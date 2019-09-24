@@ -1,11 +1,12 @@
 <studying about cUrl command>
-I wanted to know status of server in bash shell then I found cUrl command 
+
+I wanted to know the status of the server in bash shell then I found cUrl command 
 
 command line what I use is
 curl -s -o /dev/null -w "%{http_code}" -i --user name:password --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' ${SERVER}
 
 -s : silent mode, don't print out message and progress even if using -o option, It doesn't print remote data and result of /dev/null
--o : Usually curl print data from remote to console. When write file after -o It save data as the file you wrote(Useful for saving).
+-o : Usually, curl print data from remote to console. When writing file after -o It saves data as the file you wrote(Useful for saving).
 -w <format> : Make curl display information on stdout after a completed transfer. 
 -i : Include the HTTP response headers in the output. The HTTP response headers can include things like server name, cookies, date of the document, HTTP version and more...
 
