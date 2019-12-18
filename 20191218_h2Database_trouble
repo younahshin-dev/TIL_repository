@@ -1,1 +1,19 @@
+#H2 Setting 
+spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:~/test
+spring.h2.console.path=/h2Console
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+
 Database "C:/Users/roavi/test" not found, either pre-create it or allow remote database creation (not recommended in secure environments) [90149-200] 90149/90149 (Help)
+
+add h2 version of h2 at pom.xml 
+		<dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+            <version>1.4.193</version> 
+        </dependency>
