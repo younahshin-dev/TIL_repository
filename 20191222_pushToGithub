@@ -1,0 +1,38 @@
+how to push a local project to Github
+(Git bash)
+
+1. open gitBash at your local project directory (or move to there in bash)
+2. git remote add origin https://github.com/mindplace/test-repo.git
+3. git push origin master
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/younahshin-dev/younahShop.git'
+
+4. git pull origin master
+From https://github.com/younahshin-dev/younahShop
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+I failed every time to push 
+so use this
+
+5. git pull origin master --allow-unrelated-histories
+From https://github.com/younahshin-dev/younahShop
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+ 
+6. git push origin master
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (30/30), 53.83 KiB | 5.38 MiB/s, done.
+Total 30 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/younahshin-dev/younahShop.git
+   eef3783..01aa906  master -> master
+
+success
+
