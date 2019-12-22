@@ -1,0 +1,42 @@
+1.Situation: It doesn't work to make tables automatically on spring boots
+
+2.application.properties
+#H2 Setting 
+spring.h2.console.enabled=true
+spring.datasource.initialization-mode=always
+spring.jpa.generate-ddl=true
+#spring.jpa.hibernate.ddl-auto=true
+ 
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.h2.console.path=/h2Console
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+#spring.datasource.data=classpath:com/younahShop/src/main/resources/import.sql
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+3.schema.sql(file type)
+DROP TABLE IF EXISTS GOODS_DETAIL;
+
+ CREATE TABLE GOODS (
+	ID INT(10),
+	NAME VARCHAR(40),
+	PROVIDER VARCHAR(40),
+	PRICE INT(40),
+	SHIPPING_METHOD VARCHAR(40),
+	SHIPPING_PRICE INT(40),
+	SHIPPING_CANBUNDLE BOOLEAN,
+	REG_DTM TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+	UPD_DTM TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+	PRIMARY KEY (ID)
+ );
+ 
+4.solution
+I focused only on application.properties but the problem is pom.xml
+
+      <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-devtools</artifactId>
+	        <optional>true</optional>
+		  </dependency>
+after adding this dependency it works
