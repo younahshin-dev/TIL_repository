@@ -53,8 +53,7 @@
 
 
 8.Spring에서 Single ton이란?
-
-
+value that cannot be modified. only can be defineted once. 
 
 9.Spring DI, IoC에 대해 설명 해보세요.
 
